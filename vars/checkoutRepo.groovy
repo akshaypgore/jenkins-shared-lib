@@ -1,4 +1,4 @@
-def checkoutRepoWithTag(repoUrl, tag_name) {
+def call(repoUrl, tag_name) {
     
     def checkoutConfig = [
         $class: 'GitSCM',
@@ -11,6 +11,5 @@ def checkoutRepoWithTag(repoUrl, tag_name) {
     ]
     
     checkout(checkoutConfig)
-    return true
 
 }
