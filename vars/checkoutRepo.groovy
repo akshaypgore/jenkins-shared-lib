@@ -1,11 +1,10 @@
-def call(String repoUrl, String branch = 'master') {
+def call(String repoUrl) {
     echo "Checking out repository: ${repoUrl} on branch: ${branch}"
     
-    def checkoutConfig = [
-        $class: 'GitSCM',
-        branches: [[name: "*/${branch}"]],
-        userRemoteConfigs: [[url: repoUrl]]
-    ]
-    checkout(checkoutConfig)
-    echo "Repository checkout completed successfully"    
+    checkout(
+        [$class: 'GitSCM',
+        branches: [[name: "${params.TAG}"]],
+        userRemoteConfigs: [[url: 'https://github.com/jenkinsci/git-parameter-plugin.git']]]
+        )
+    echo "Repository checkout completed successfully" 
 }
