@@ -6,7 +6,7 @@ def call(repoUrl, tag_name) {
             [name: "refs/tags/${tag_name}"]
         ],
         userRemoteConfigs: [
-            [url: '${repoUrl}']
+            [url: "${repoUrl}"]
         ]
     ]
     
