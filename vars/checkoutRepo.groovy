@@ -8,5 +8,5 @@ def call(String repoUrl, String branch = 'master') {
     ]
     checkout(checkoutConfig)
     echo "Repository checkout completed successfully"
-    echo "Current Directory: ${System.getProperty('user.dir')}"    
+    sleep(secs: 300)    
 }
