@@ -7,6 +7,5 @@ def call(String repoUrl, String branch = 'master') {
         userRemoteConfigs: [[url: repoUrl]]
     ]
     checkout(checkoutConfig)
-    echo "Repository checkout completed successfully"
-    sleep(secs: 300)    
+    echo "Repository checkout completed successfully"    
 }
