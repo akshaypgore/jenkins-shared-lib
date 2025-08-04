@@ -6,13 +6,7 @@ def call(String repoUrl, String branch = 'master') {
         branches: [[name: "*/${branch}"]],
         userRemoteConfigs: [[url: repoUrl]]
     ]
-
-    def printCurrentDirectory() {
-        String currentDir = System.getProperty("user.dir")
-        println "Current Directory: ${currentDir}"
-    }
-
     checkout(checkoutConfig)
-    printCurrentDirectory()
-    
+    echo "Repository checkout completed successfully"
+    echo "Current Directory: ${System.getProperty('user.dir')}"    
 }
