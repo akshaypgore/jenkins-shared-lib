@@ -3,7 +3,7 @@ def call(String repoUrl) {
     
     checkout(
         [$class: 'GitSCM',
-        branches: [[name: "${params.TAG}"]],
+        branches: [[name: "refs/tags/${params.TAG}"]],
         userRemoteConfigs: [[url: 'https://github.com/jenkinsci/git-parameter-plugin.git']]]
         )
     echo "Repository checkout completed successfully" 
