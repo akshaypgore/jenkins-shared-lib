@@ -9,6 +9,8 @@ def checkoutRepoWithTag(repoUrl, tag_name) {
             [url: 'https://github.com/jenkinsci/git-parameter-plugin.git']
         ]
     ]
+    
     checkout(checkoutConfig)
+    return true
 
 }
